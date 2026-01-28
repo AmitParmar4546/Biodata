@@ -25,7 +25,7 @@ const PersonalDetails = () => {
     { icon: <Heart size={20} />, label: "Caste", value: "Hindu, Rajput" },
     { icon: <GraduationCap size={20} />, label: "Education", value: "B.C.A, M.C.A" },
     { icon: <Ruler size={20} />, label: "Height", value: "5'7\"" },
-    { icon: <Scale size={20} />, label: "Weight", value: "64 Kg" },
+    { icon: <Scale size={20} />, label: "Weight", value: "65 Kg" },
     { icon: <Briefcase size={20} />, label: "Occupation", value: "Software Engineer at Xappiens LLC (Madrid, Spain)" },
     { icon: <MapPin size={20} />, label: "Native", value: "Amarnagar, Vadiya" },
   ];
@@ -59,6 +59,12 @@ const PersonalDetails = () => {
           ))}
         </div>
       </div>
+      {/* Maternal Info */}
+        <div className="mt-8 p-6 bg-secondary/50 rounded-xl border border-border">
+          <p className="text-sm text-muted-foreground uppercase tracking-wide mb-2">Maternal</p>
+          <p className="text-foreground font-medium">Morbi(Dodiya)</p>
+        </div>
+      
     </section>
   );
 };
