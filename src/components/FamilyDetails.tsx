@@ -49,7 +49,7 @@ const FamilyDetails = () => {
     {
       relation: "Mother",
       name: "Sonalben Vijaybhai Parmar",
-      maternal: "Morbi(Dodiya)",
+      maternal: "Morbi(Gohil)",
     },
     {
       relation: "Sister",

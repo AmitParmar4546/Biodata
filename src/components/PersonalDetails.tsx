@@ -1,23 +1,19 @@
-import { User, Calendar, GraduationCap, Briefcase, Ruler, MapPin } from "lucide-react";
+import { User, Calendar, GraduationCap, Briefcase, Ruler, MapPin, Scale, Heart } from "lucide-react";
 
 interface DetailItemProps {
   icon: React.ReactNode;
   label: string;
   value: string;
-  delay?: number;
 }
 
-const DetailItem = ({ icon, label, value, delay = 0 }: DetailItemProps) => (
-  <div 
-    className="flex items-start gap-4 p-4 bg-card rounded-lg shadow-soft border border-border/50 hover:shadow-card hover:border-gold/30 transition-all duration-300"
-    style={{ animationDelay: `${delay}ms` }}
-  >
-    <div className="p-3 bg-secondary rounded-lg text-primary">
+const DetailItem = ({ icon, label, value }: DetailItemProps) => (
+  <div className="flex items-start gap-4 p-4 bg-card rounded-lg shadow-soft border border-border hover:shadow-card transition-shadow duration-300">
+    <div className="flex-shrink-0 w-10 h-10 bg-secondary rounded-full flex items-center justify-center text-primary">
       {icon}
     </div>
-    <div>
-      <p className="text-sm text-muted-foreground font-medium uppercase tracking-wide">{label}</p>
-      <p className="text-foreground font-medium mt-1">{value}</p>
+    <div className="flex-1">
+      <p className="text-sm text-muted-foreground font-medium mb-1">{label}</p>
+      <p className="text-foreground font-medium">{value}</p>
     </div>
   </div>
 );
@@ -29,46 +25,38 @@ const PersonalDetails = () => {
     { icon: <Heart size={20} />, label: "Caste", value: "Hindu, Rajput" },
     { icon: <GraduationCap size={20} />, label: "Education", value: "B.C.A, M.C.A" },
     { icon: <Ruler size={20} />, label: "Height", value: "5'7\"" },
-    { icon: <Scale size={20} />, label: "Weight", value: "65 Kg" },
+    { icon: <Scale size={20} />, label: "Weight", value: "64 Kg" },
     { icon: <Briefcase size={20} />, label: "Occupation", value: "Software Engineer at Xappiens LLC (Madrid, Spain)" },
     { icon: <MapPin size={20} />, label: "Native", value: "Amarnagar, Vadiya" },
   ];
 
   return (
-    <section className="py-20 px-4 bg-background" id="personal">
+    <section id="personal" className="py-16 px-4 bg-background">
       <div className="max-w-4xl mx-auto">
         {/* Section Header */}
         <div className="text-center mb-12">
-          <div className="flex items-center justify-center gap-3 mb-4">
-            <div className="h-px w-12 bg-gold" />
+          <div className="flex items-center justify-center gap-4 mb-4">
+            <div className="h-px w-12 bg-gradient-to-r from-transparent via-gold to-transparent" />
             <span className="text-gold">✦</span>
-            <div className="h-px w-12 bg-gold" />
+            <div className="h-px w-12 bg-gradient-to-r from-transparent via-gold to-transparent" />
           </div>
-          <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-3">
+          <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-2">
             Personal Details
           </h2>
-          <p className="text-muted-foreground">
-            About me and my background
-          </p>
+          <p className="text-muted-foreground">Essential information at a glance</p>
         </div>
 
         {/* Details Grid */}
-        <div className="grid md:grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           {details.map((detail, index) => (
-            <DetailItem
+            <div
               key={detail.label}
-              icon={detail.icon}
-              label={detail.label}
-              value={detail.value}
-              delay={index * 100}
-            />
+              className="animate-fade-in"
+              style={{ animationDelay: `${index * 0.1}s` }}
+            >
+              <DetailItem {...detail} />
+            </div>
           ))}
-        </div>
-
-        {/* Maternal Info */}
-        <div className="mt-8 p-6 bg-secondary/50 rounded-xl border border-border">
-          <p className="text-sm text-muted-foreground uppercase tracking-wide mb-2">Maternal</p>
-          <p className="text-foreground font-medium">Morbi(Dodiya)</p>
         </div>
       </div>
     </section>
