@@ -21,12 +21,12 @@ const DetailItem = ({ icon, label, value }: DetailItemProps) => (
 const PersonalDetails = () => {
   const details = [
     { icon: <User size={20} />, label: "Full Name", value: "Amit Vijaybhai Parmar" },
-    { icon: <Calendar size={20} />, label: "Date of Birth", value: "18th November, 2002" },
+    { icon: <Calendar size={20} />, label: "Date of Birth", value: "18th November, 2002 (04:55 PM)" },
     { icon: <Heart size={20} />, label: "Caste", value: "Hindu, Rajput" },
     { icon: <GraduationCap size={20} />, label: "Education", value: "B.C.A, M.C.A" },
     { icon: <Ruler size={20} />, label: "Height", value: "5'7\"" },
     { icon: <Scale size={20} />, label: "Weight", value: "62 Kg" },
-    { icon: <Briefcase size={20} />, label: "Occupation", value: "Software Engineer at Xappiens LLC (Madrid, Spain)" },
+    { icon: <Briefcase size={20} />, label: "Occupation", value: "Software Engineer at Xappiens LLC (Madrid, Spain)(₹2,64,000 p.a)" },
     { icon: <MapPin size={20} />, label: "Native", value: "Amarnagar, Vadiya" },
   ];
 
